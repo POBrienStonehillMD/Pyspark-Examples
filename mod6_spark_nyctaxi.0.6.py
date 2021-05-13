@@ -49,7 +49,7 @@ schema = StructType([ \
 df = spark.read.format("csv"). \
   options(header='True'). \
   schema(schema). \
-  load("../../dan606/nyctaxi/trip\ data/yellow*2019*")
+  load("../../dan606/nyctaxi/trip\ data/yellow*2020*")
 df = df.withColumn("id", monotonically_increasing_id())
 # handle dates AND time
 df=df.withColumn('pickup_time', fun.to_timestamp('tpep_pickup_datetime', "yyyy-MM-dd HH:mm:ss"))
